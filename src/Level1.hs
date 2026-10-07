@@ -86,7 +86,14 @@ itemAt n
 -- последним действием. Используйте параметры-аккумуляторы.
 
 nSumDigits :: Integer -> (Integer, Integer)
-nSumDigits = todo "1.5"
+nSumDigits n
+  | m < 10    = (1, m)
+  | otherwise = go m 0 0
+  where
+    m = abs n
+    go k cnt s
+      | k == 0    = (cnt, s)
+      | otherwise = go (k `div` 10) (cnt + 1) (s + k `mod` 10)
 
 
 -- 1.6. Предскажите тип
