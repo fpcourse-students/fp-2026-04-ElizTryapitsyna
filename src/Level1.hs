@@ -37,10 +37,15 @@ sndChurch = \p -> p (\_ b -> b)
 -- При реализации используйте охранные выражения (guards, см. лекцию).
 
 isEven :: Integer -> Bool
-isEven = todo "1.2 isEven"
-
+isEven n
+  | n == 0 = True
+  | n < 0  = isOdd (n + 1)
+  | otherwise = isOdd (n - 1)
 isOdd :: Integer -> Bool
-isOdd = todo "1.2 isOdd"
+isOdd n
+  | n == 0 = False
+  | n < 0  = isEven (n + 1)
+  | otherwise = isEven (n - 1)
 
 
 -- 1.3. Найдите ошибку
