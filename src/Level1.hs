@@ -20,9 +20,9 @@ import TypeCheck (Todo)
 -- ваши называются fstChurch и sndChurch.
 -- Ознакомьтесь с тем, как это задание тестируется в test/SpecLevel1.hs.
 
-pair = todo "1.1 pair"
-fstChurch = todo "1.1 fstChurch"
-sndChurch = todo "1.1 sndChurch"
+pair = \a b f -> f a b
+fstChurch = \p -> p (\a _ -> a)
+sndChurch = \p -> p (\_ b -> b)
 
 
 -- 1.2. Взаимная рекурсия
