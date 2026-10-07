@@ -72,7 +72,11 @@ counterexample = 0
 -- Постарайтесь сделать так, чтобы ваша функция работала за линейное время.
 
 itemAt :: Integer -> Integer
-itemAt = todo "1.4"
+itemAt n
+  | n == 0 = 1
+  | n == 1  = 2
+  | n == 2  = 3
+  | otherwise = itemAt (n - 1) - 2 * itemAt (n - 2) + 3 * itemAt (n - 3)
 
 
 -- 1.5. Цифры числа
